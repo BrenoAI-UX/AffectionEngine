@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Emoções com Estilo</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: "Segoe UI", sans-serif;
+      padding-top: 100px;
+      transition: background-color 1s ease;
+    }
+    #emoji {
+      font-size: 100px;
+      margin-bottom: 20px;
+      animation: fadein 1s ease;
+    }
+    #mensagem {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    @keyframes fadein {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div id="emoji">😐</div>
+  <h1 id="mensagem">Selecione uma emoção:</h1>
+  <button onclick="mostrarEmocao('alegria')">Alegria</button>
+  <button onclick="mostrarEmocao('tristeza')">Tristeza</button>
+  <button onclick="mostrarEmocao('raiva')">Raiva</button>
+
+  <audio id="som" src="" autoplay></audio>
+
+  <script>
+    function mostrarEmocao(tipo) {
+      const emoji = document.getElementById("emoji");
+      const mensagem = document.getElementById("mensagem");
+      const som = document.getElementById("som");
+
+      switch (tipo) {
+        case "alegria":
+          document.body.style.backgroundColor = "#fff59d";
+          emoji.textContent = "😊";
+          mensagem.textContent = "Sorrindo! O mundo está radiante!";
+          som.src = "alegria.mp3";
+          break;
+        case "tristeza":
+          document.body.style.backgroundColor = "#90caf9";
+          emoji.textContent = "😢";
+          mensagem.textContent = "Silencioso... O céu parece cinza.";
+          som.src = "tristeza.mp3";
+          break;
+        case "raiva":
+          document.body.style.backgroundColor = "#ef5350";
+          emoji.textContent = "😠";
+          mensagem.textContent = "Fúria no olhar!";
+          som.src = "raiva.mp3";
+          break;
+        default:
+          document.body.style.backgroundColor = "#ffffff";
+          emoji.textContent = "😐";
+          mensagem.textContent = "Emoção neutra.";
+          som.src = "";
+      }
+
+      som.play();
+    }
+  </script>
+</body>
+</html>
