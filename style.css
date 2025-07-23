@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  background: #fefefe;
+  text-align: center;
+  padding: 2em;
+  color: #333;
+}
+
+button {
+  background: #ff89d1;
+  border: none;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+button:hover {
+  background: #ff64b7;
+}
+
+pre {
+  margin-top: 2em;
+  background: #f4f4f4;
+  padding: 1em;
+  border-radius: 8px;
+  text-align: left;
+}
