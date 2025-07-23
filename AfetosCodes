@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Afeto Codes</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffe9f0, #e2f4ff);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    #mensagem {
+      font-size: 26px;
+      font-weight: 500;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .coração {
+      font-size: 48px;
+      animation: pulso 1.5s infinite;
+    }
+
+    @keyframes pulso {
+      0% { transform: scale(1); color: #ff6f91; }
+      50% { transform: scale(1.2); color: #ffafcc; }
+      100% { transform: scale(1); color: #ff6f91; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="coração">❤️</div>
+  <div id="mensagem">Carregando afeto...</div>
+
+  <script>
+    const mensagens = [
+      "Você é importante, mesmo nos dias em que duvida disso.",
+      "Seu esforço não passa despercebido — ele cria beleza.",
+      "Respira fundo. Você merece paz, não só produtividade.",
+      "Afeto também é código: começa com cuidado, termina em conexão.",
+      "Sua existência é suficiente. O resto é detalhe que se ajusta."
+    ];
+
+    let indice = 0;
+    const div = document.getElementById("mensagem");
+
+    function mostrarMensagem() {
+      div.style.opacity = 0;
+
+      setTimeout(() => {
+        div.innerText = mensagens[indice];
+        div.style.opacity = 1;
+        indice = (indice + 1) % mensagens.length;
+      }, 600);
+    }
+
+    mostrarMensagem();
+    setInterval(mostrarMensagem, 5000);
+  </script>
+
+</body>
+</html>
