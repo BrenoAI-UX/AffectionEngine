@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  background: #fefefe;
+  padding: 20px;
+}
+
+#mascote {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+}
+
+#falaMascote {
+  position: fixed;
+  bottom: 180px;
+  right: 40px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#chat {
+  max-width: 600px;
+  margin: auto;
+  padding-top: 200px;
+}
+
+#mensagens p {
+  margin: 5px 0;
+}
