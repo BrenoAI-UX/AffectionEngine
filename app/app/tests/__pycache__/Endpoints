@@ -1,0 +1,20 @@
+GET / → Verifica se a API está online.
+
+POST /analyze → Recebe texto, retorna emoção + resposta empática.
+
+Exemplo de input
+json
+Copiar
+Editar
+{ "text": "Me sinto perdido e ansioso hoje." }
+Exemplo de output
+json
+Copiar
+Editar
+{
+  "emotion": {
+    "label": "ansioso",
+    "score": 0.861
+  },
+  "empathetic_message": "O usuário parece ansioso. Escreva uma resposta empática: Entendo que esteja difícil lidar com isso. Respire fundo. Você não está sozinho."
+}
