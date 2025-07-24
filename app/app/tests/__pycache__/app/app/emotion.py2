@@ -1,0 +1,13 @@
+from transformers import pipeline
+import yaml
+
+with open("configs/emotions.yaml", "r") as f:
+    CANDIDATE_LABELS = yaml.safe_load(f)["emotions"]
+
+emotion_classifier = pipeline("zero-shot-classification")
+
+def detect_emotion(text: str):
+    result = emotion_classifier(text, candidate_labels=CANDIDATE_LABELS)
+    label = result['labels'][0]
+    score = result['scores'][0]
+    return {"label": label, "score": round(score, 3)}
