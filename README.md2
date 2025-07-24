@@ -1,0 +1,9 @@
+# 💖 AffectionEngine
+
+Uma API que detecta emoções em texto e gera mensagens empáticas usando IA.
+
+## Como rodar
+
+```bash
+pip install -r requirements.txt
+uvicorn app.main:app --reload
